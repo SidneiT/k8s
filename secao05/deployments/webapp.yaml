@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weapp
+spec:
+  selector:
+    matchLabels:
+      app: weapp
+  template:
+    metadata:
+      labels:
+        app: weapp
+    spec:
+      containers:
+      - name: weapp
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+  replicas: 2
+
+  # 172.17.0.5  

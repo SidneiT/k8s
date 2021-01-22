@@ -1,8 +1,18 @@
 #### Manipulando o cluster
 
  `minikube status`
+
  `minikube start`
+
  `minikube delete`
+
+`minikube service frontend-svc --url`
+
+` minikube service frontend-svc `
+
+`minikube service frontend-svc`
+
+`minikube dashboard`
 
 ## kubectl 
 
@@ -54,6 +64,10 @@
 
  `kubectl create -f pod.yaml --save-config --record`
 
+`kubectl create -f pod.yaml --save-config --namespace=frontend`
+
+`kubectl create -f namespaces/backend.yaml --save-config`
+
  `kubectl apply -f pod.yaml`
 
  `kubectl scale replicaset frontend-rs --replicas=4`
@@ -65,6 +79,10 @@
 `kubectl rollback undo deployment frontend-dp --to-revision=2`
 
 `kubectl describe service kubernetes`
+
+`kubectl config set-context --current --namespace=frontend`
+
+
 
 
 

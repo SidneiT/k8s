@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-dp
+  labels:
+    app: frontend-app
+    type: frontend
+spec:
+  selector:
+    matchLabels:
+      type: frontend
+  template:
+    metadata:
+      name: frontend-pod
+      labels:
+        app: frontend
+        type: frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+  replicas: 6
